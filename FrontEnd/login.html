@@ -8,42 +8,44 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
         <meta name="description" content="">
-        <link rel="stylesheet" href="./assets/style.css">
-        <script src="./assets/javascript/login.js" defer></script>    
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="assets/javascript/login.js" defer></script>    
 </head>
 <body>
     <header>
-        <div class="hederBottom">
-            <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+		<div class="nav-utilisateur">
+            <h1><span class="nom-sophie">Sophie Bluel</span><span class="activite-sophie">ARCHITECTE D'INTÉRIEUR</span></h1>
             <nav>
                 <ul>
-                    <li>projets</li>
-                    <li>contact</li>
-                    <li>login</li>
-                    <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+                    <li><a href="#portfolio">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a class="invite" href="login.html">Login</a>
+                    </li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><img class="insta-logo" src="./assets/icons/instagram.png" alt="Instagram"></a></li>
                 </ul>
             </nav>
         </div>
-    </header>
-    <Main>
-        <section id="login">
-            <h2 class="loginTitle">Log In</h2>
-            <form id="loginForm">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" autocomplete="off">
-                <label for="userPassword">Mot de passe</label>
-                <input type="password" name="userPassword" id="userPassword" autocomplete="off">
-                <input type="submit" value="Se connecter">
+	</header>
+	<main>
+        <section class= "login-formulaire">
+            <h2>Log in</h2>
+            <form id="login-form" method="post" action="#">
+                <label class="marge-label" for="email">E-mail</label>
+                <input type="email" name="email" id="email" required>
+                <label class="marge-label" for="password">Mot de passe</label>
+                <input type="password" name="password" id="password" required>
+                <input type="submit" id="login-form-submit" value="Se connecter">
+                <a href="#">Mot de passe oublié</a>
             </form>
-            <p><a href="#">Mot de passe oublié?</a></p>
-        </section>
-    </Main>
-    <footer id="footerLogin">
-        <nav>
-            <ul>
-                <li>Mentions Légales</li>
-            </ul>
-        </nav>
-    </footer>
+    </section>
+    </main>
+	<footer>
+		<nav>
+			<ul>
+				<li>Mentions Légales</li>
+			</ul>
+		</nav>
+	</footer>
 </body>
 </html>
