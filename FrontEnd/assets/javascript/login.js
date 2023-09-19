@@ -1,60 +1,35 @@
 
 
-const loginForm = document.querySelector("form");
-const email = document.getElementById("email");
-const userPassword = document.getElementById("userPassword");
-
-
-loginForm.addEventListener("submit", (event) => {
-event.preventDefault();
-
-
-const user = {
-    email: email.value,
-    password : userPassword.value,
-};
-
-try{
-fetch("http://localhost:5678/api/users/login", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      // envoi user en JSON
-      body: JSON.stringify(user)
-    })
-        .then((response) => response.json())
-        .then((user) => {
-            
-            localStorage.setItem("token", user.token);
-            window.location.href = "index.html";
-        })
-    }catch(error){
-        console.log(error);
-    }
+// Exécution de code JS une fois que la page est chargée
+document.addEventListener('DOMContentLoaded', function() {
+	document.getElementById('login-form').addEventListener('submit', function(e) {
+		e.preventDefault();
+		//Récupération des données du formulaire form
+		const user = {
+			email: document.querySelector('#email').value,
+			password: document.querySelector('#password').value,
+		};
+		// Requette pour se logger
+		fetch("http://localhost:5678/api/users/login", {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(user),
+		})
+		.then(function(response) {
+			
+			return response.json();
+		})
+		.then(function(data) {
+			console.log(data);
+			localStorage.setItem('token', data.token);
+			localStorage.setItem('userId', data.userId);
+			// Redirection vers'index.html'
+			location.href = 'index.html';
+		})
+		.catch(function(error) {
+			console.log(error);
+		});
+	})
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  
