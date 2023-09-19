@@ -134,7 +134,7 @@ table {
 	border-spacing: 0;
 }
 
-/** end reset css**/
+/* css general */
 body {
 	max-width: 1140px;
 	margin: auto;
@@ -142,55 +142,120 @@ body {
 	font-size: 14px;
 }
 
-header {
+
+h2 {
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 2.2em;
+	color: #1D6154;
+	line-height: 36px;
+}
+
+li a:hover, .login-form a:hover, #header-top a:hover, .container-only-admin a:hover
+{
+	color: #B1663C;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+.insta-logo {
+	width: 20px;
+	height: 20px;
+	margin-top: 5px;
+}
+
+input[type="submit"]:hover, button:hover {
+	cursor: pointer;
+}
+
+#introduction p, #contact label, #contact p, .gallery figcaption, .login-form label, 
+.login-form a, #modal-edit-work-form label
+{
+    color: #3D3D3D;
+}
+
+h1 > span, #introduction p, .gallery figcaption, #contact p, nav a, .modal-title, .modal-delete-all,
+.modal-content-new-photo p 
+{
+	font-weight: 400;
+}
+
+#contact label, .login-form label, .login-form a, #modal-edit-work-form #new-image,
+.modal-content-new-category-title label {
+	font-weight: 500;
+}
+
+h1 .nom-sophie, .filters-design, #contact input[type="submit"], .login-form input[type="submit"], .modal-delete-all, #modal-edit-work-form input[type="submit"] 
+{
+	font-family: 'Syne';
+}
+
+.login-form input[type="submit"], #portfolio .filter-active, #contact input[type="submit"], .modal-add
+{
+	background-color: #1D6154;
+}
+
+#introduction p, #contact label, footer li a, .login-form label, .login-form a {
+	line-height: 16px;
+}
+
+#contact form, #contact > *, .login-form form, .login h2 {
+	min-width: 200px;
+}
+
+.invite {
+	display:block;
+}
+
+.mode-admin {
+	display:none;
+}
+
+/* Header */
+
+.nav-utilisateur {
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
-	margin: 35px 30px;
-	padding-bottom: 81px;
-	padding-top: 45px;
-}
-
-main {
-	margin: 0 auto;
-	width: 90%;
-}
-
-section {
-	margin: 50px 0
+	padding: 50px 50px 0 50px;
 }
 
 h1 {
 	display: flex;
 	flex-direction: column;
-	font-family: 'Syne';
-	font-size: 22px;
+}
+
+h1 .nom-sophie {
 	font-weight: 800;
-	color: #B1663C
+	font-size: 1.6em;
+	line-height: 26px;
+	color: #B1663C;
 }
 
-h1>span {
-	font-family: 'Work Sans';
-	font-size: 10px;
-	font-weight: 400;
-	text-transform: uppercase;
-	padding-top: 5px;
+h1 .activite-sophie {
+	font-size: 0.680em;
+	line-height: 12px;
 	letter-spacing: 0.1em;
-	;
+	margin-top: 5px;
+	color: #B1663C;
 }
 
-h2 {
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 30px;
-	color: #1D6154
+header img{
+	cursor: pointer;
 }
 
+.nav-utilisateur{
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 50px 0 50px;
+}
 nav ul {
 	display: flex;
 	align-items: center;
-	list-style-type: none;
 	column-gap: 25px;
-
 }
 
 nav li {
@@ -203,14 +268,22 @@ li a {
 	color: black;
 }
 
-li:hover,li a:hover {
+main {
+	margin: 0 auto;
+	width: 90%;
+}
+
+section {
+	margin: 50px 0
+}
+
+
+
+li:hover, li a:hover {
 	font-weight: bolder;
 	font-weight: 1000;
 	color: rgb(17, 17, 17); 
 	color: #B1663C;
-}
-header img{
-	cursor: pointer;
 }
 
 #introduction {
@@ -240,51 +313,44 @@ header img{
 	margin-bottom: 0.5em;
 }
 
+
+/* portefolio */
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
 }
 
-.heading-wraper{
+/* CSS portfolio filters */
+
+.filters {
 	display: flex;
+	flex-direction: row;
 	justify-content: center;
-	align-items: center;
-
-	
+	padding: 50px 0;
 }
 
-.modif-btn{
-	text-decoration: none;
-	margin-left: 20px;
-	color: black;
-	font-size: 0.5em;
-	display: none;
-}
- 
-
-
-
-
-button {
+.filters-design {
+	margin-left: 10px;
+	border: 1px solid #1D6154;
+    border-radius: 60px;
+	font-size: 1.15em;
 	color: #1D6154;
-	height: 30px;
-	border: 1px solid #1D6154;
-	border-radius: 15px;
-	cursor: pointer;
-	background-color: #ffffff;
-	min-width: 70px;
+	background-color: rgb(246, 246, 235);
+	padding: 7px 15px;
 	
 }
 
-/* button:hover {
-	color: #ffffff;
-	height: 30px;
-	border: 1px solid #1D6154;
-	border-radius: 15px;
-	cursor: pointer;
+.filter-active {
+	color: #FFFFFF;
+}
+
+#portfolio .filter-active{
 	background-color: #1D6154;
-	min-width: 70px;
-} */
+}
+
+.filter-all {
+	padding-left: 25px;
+	padding-right: 25px;
+}
 
 .gallery {
 	width: 100%;
@@ -299,50 +365,52 @@ button {
 
 }
 
-#contact,
-#login {
+.gallery figcaption {
+	font-size: 0.930em;
+	line-height: 15px;
+	padding-top: 7px;
+}
+
+/* Contact  */
+
+#contact {
 	width: 50%;
 	margin: auto;
 }
 
-#contact,
-#login>* {
+#contact {
 	text-align: center;
 
 }
 
-#contact h2,
-#login h2 {
+#contact h2 {
 	margin-bottom: 20px;
 }
 
-#contact form,
-#login form {
+#contact form {
 	text-align: left;
 	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
 }
 
-#contact input,
-#login input {
+#contact input{
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
+	outline: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-#contact label,
-#login label {
+#contact label{
 	margin: 2em 0 1em 0;
 }
 
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	outline: none;
 }
-
-
 
 input[type="submit"] {
 	font-family: 'Syne';
@@ -355,9 +423,330 @@ input[type="submit"] {
 	border-radius: 60px;
 }
 
+/* Footer */
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
 
+/* login formulaire */
+
+.login-formulaire form {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.login-formulaire  {
+	width: 50%;
+	margin: auto;
+	padding: 140px 170px 330px 170px;
+}
+
+.login-formulaire  h2 {
+	text-align: center;
+}
+
+.marge-label {
+	padding-bottom: 5px;
+	padding-top: 30px;
+}
+
+.login-formulaire  input {
+	height: 50px;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.login-formulaire  input[type="submit"] {
+	margin: 40px auto 30px;
+	height: 36px;
+	display: block;
+	border: none;
+	color: #FFFFFF;
+    border-radius: 60px;
+	font-size: 1em;
+	padding: 10px 39px;
+	min-width: 180px;
+}
+
+.login-formulaire a {
+	margin: auto;
+	text-decoration: underline;
+}
+
+/*CSS mode admin */
+
+body.connected .invite {
+	display:none;
+}
+
+body.connected .mode-admin {
+	display:block;
+}
+
+/* header-top */
+.header-top-design {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	background-color: #000000;
+	display: none;
+}
+
+.header-top-design a {
+	padding-left: 10px;
+	color: #FFFFFF;
+}
+
+.header-top-design i {
+	padding-right: 10px;
+	font-size: 16px;
+	color: #FFFFFF;
+}
+
+/* boutoon modifier pour la modal */
+
+.portfolio-modifier-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.btn-maj i {
+	padding-right: 10px;
+	font-size: 20px;
+}
+
+/* Ouvrir la modal au click*/
+
+.portfolio-modifier-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.btn-maj i {
+	padding-right: 10px;
+	font-size: 20px;
+}
+
+/* CSS pour la Modal */
+
+.modal-overlay {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	display: none;
+}
+
+/* Modal1, "modal-works" */
+
+.modal-gallery {
+	width: 35%;
+	height: 730px;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	display: none;
+}
+
+.modal-content {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 45px 90px 45px 100px;
+	gap: 10px;
+}
+
+.modal-content figure {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-content img {
+	width: 80px;
+}
+
+.modal-content .work-item .trash{
+	margin-top: 5px;
+	color: #FFFFFF;
+	background: #000000;
+	border-radius: 2px;
+	text-align: center;
+	position: absolute;
+}
+
+.modal-content .work-item .trash {
+	margin-left: 60px;
+	padding: 4px;
+	font-size: 9px;
+}
+
+.modal-content .work-item:hover {
+	cursor: pointer;
+}
+
+.modal-content figcaption {
+	padding-top: 5px;
+}
+
+.modal-close {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding-right: 30px;
+	padding-top: 30px;
+	font-size: 15px;
+}
+
+.modal-title {
+	font-size: 1.860em;
+	line-height: 30px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+hr {
+	margin: 0 105px;
+	border-top: 1px solid #B3B3B3;
+	border-bottom: 0; 
+	border-left: 0;
+	border-right: 0;
+}
+
+.container-modal-add-and-modal-delete {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 40px;
+}
+
+.modal-add {
+	border: none;
+	border-radius: 60px;
+	color: #FFFFFF;
+	padding: 10px 49px;
+	font-family: 'Syne';
+	font-size: 1em;
+	font-weight: 700;
+}
+
+ /*  modal2 , "modal-edit"  */
+
+.modal-edit-work {
+	width: 630px;
+	height: 670px;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	display: none;
+}
+
+.modal-edit-work .container-for-icon-in-second-window-of-modal {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 30px 30px 0 30px;
+	font-size: 15px;
+}
+
+#modal-edit-work-form .modal-content-new-photo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px 0 19px 0;
+	background-color: #E8F1F7;
+	border-radius: 3px;
+	margin: 35px 105px 0 105px;
+}
+
+.modal-content-new-photo i {
+	font-size: 58px;
+	color: #B9C5CC;
+	padding-bottom: 20px;
+}
+
+.modal-content-new-photo #new-image {
+	background-color: #CBD6DC;
+	border: none;
+	border-radius: 50px;
+	font-family: 'Work Sans';
+	font-size: 1em;
+	line-height: 16px;
+	color: #306685;
+	text-align: center;
+	padding: 10px 33px;
+	cursor: pointer;
+}
+
+.modal-content-new-photo #form-image {
+	margin-top: -36px;
+	width: 173px;
+	padding: 8px 0;
+	border: none;
+	border-radius: 50px;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.modal-content-new-photo p {
+	font-size: 0.750em;
+	line-height: 12px;
+	color: #444444;
+	padding-top: 7px;
+}
+
+#modal-edit-work-form .modal-content-new-category-title {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	padding: 10px 105px 0 105px;
+}
+
+.modal-content-new-category-title input[type="text"], select {
+	height: 51px;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	border: none;
+}
+
+.modal-content-new-category-title #form-title, #form-category {
+	color: #444444;
+	padding-left: 16px;
+	font-family: 'Work Sans';
+	font-size: 1em;
+}
+
+.modal-content-new-category-title label {
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.modal-content-new-category-title .border2 {
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 45px;
+}
+
+#modal-edit-work-form input[type="submit"] {
+	border-radius: 60px;
+	margin: 30px auto 45px;
+	padding: 10px;
+	border: none;
+	color: #FFFFFF;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1em;
+	background-color: #A7A7A7;
+}
