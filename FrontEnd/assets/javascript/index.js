@@ -66,6 +66,9 @@ fetch("http://localhost:5678/api/categories")
           };
       });
     }
+  })
+  .catch(function (err) {
+    console.log(err);
   });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -142,8 +145,8 @@ document.addEventListener("DOMContentLoaded", function () {
             poubelleIcon.classList.add("fa-solid", "fa-trash-can", "trash");
             workFigure.appendChild(poubelleIcon);
             // Suppression
-            poubelleIcon.addEventListener("click", function (event) {
-              event.preventDefault();
+            poubelleIcon.addEventListener("click", function (e) {
+              e.preventDefault();
               if (confirm("Voulez-vous supprimer cet élément ?")) {
                 // Recuperer pour supprimer projets dans la modale et la gallery
                 fetch(`http://localhost:5678/api/works/${work.id}`, {
@@ -154,7 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
                   },
                 })
                   .then(function (response) {
-                    console.log("Projet supprimé.");
                     //  Suppression de projet de la page
                     document.getElementById(`work-item-${work.id}`).remove();
                     console.log(`work-item-${work.id}`);
