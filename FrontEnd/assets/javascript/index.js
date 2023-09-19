@@ -70,7 +70,7 @@ fetch("http://localhost:5678/api/categories")
   .catch(function (err) {
     console.log(err);
   });
-
+// Exécution de code JS une fois que la page est chargée
 document.addEventListener("DOMContentLoaded", function () {
   //  Vérifier si token et userId présents dans le localstorage
   if (
