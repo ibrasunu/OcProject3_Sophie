@@ -13,23 +13,31 @@
 	
 </head> 
 <body>
-<header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
-	<nav>
-		<ul>
-			<li><a href="./index.html">projets</a></li>
-			<li><a href="#contact">contact</a></li>
-			<li><a id="login" href="./login.html">login</a></li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>	
-</header>
+	<header>
+        <div id="header-top" class="header-top-design">      
+			<a href="#"><i class="fa-sharp fa-regular fa-pen-to-square"></i>Mode édition</a>
+        </div>
+		<div class="nav-utilisateur">
+            <h1><span class="nom-sophie">Sophie Bluel</span><span class="activite-sophie">ARCHITECTE D'INTÉRIEUR</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#portfolio">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a class="invite" href="login.html">Login</a>
+                        <a id="logout" class="mode-admin" href="#">Logout</a>
+                    </li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><img class="insta-logo" src="./assets/icons/instagram.png" alt="Instagram"></a></li>
+                </ul>
+            </nav>
+        </div>
+	</header>
 <main>
 	<section id="introduction">
 		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="">
+			<img src="./assets/images/sophie-bluel.png" alt="Photo de Sophie">
 		</figure>
-		<article>
+		<article id ="Presentation-marge-haut">
 			<h2>Designer d'espace</h2>
 			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
@@ -37,13 +45,13 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<div class="portfolio_modifier">
-			<h2 class="galery-heading">Mes Projets</h2>
+		<div id="marge-bas" class="portfolio-modifier-wrapper">
+			<h2>Mes Projets</h2>
+			<a id ="maj-projets" class="mode-admin btn-maj" href="#modal"><i class="fa-sharp fa-regular fa-pen-to-square"></i>Modifier</a>
+		</div>
+		<div id="all-filters" class="filters">
 			
 		</div>
-			<div id="btn">
-				<button id="btn_all">Tous</button>
-			</div>
 		<div class="gallery" id="gallery">
 			
 		</div>
@@ -70,6 +78,44 @@
 		</ul>
 	</nav>
 </footer>
-<script src="./assets/javascript/index.js"></script>
+
+<!-- Mise en place de la  modale -->
+<div id="modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby= "title-modal-overlay">
+	<div id="modal-works" class="modal-gallery">
+		<a id="button-to-close-first-window" href="#" class="modal-close"><i class="fa-solid fa-xmark"></i></a>
+		<h3 id="title-modal-overlay" class="modal-title">Galerie photo</h3>
+		<div class="modal-content"></div>
+		<hr>
+		<div class="container-modal-add-and-modal-delete">
+			<button id="modal-edit-add" class="modal-add">Ajouter une photo</button>
+		</div>
+	</div>
+	<div id="modal-edit" class="modal-edit-work">
+		<div class="container-for-icon-in-second-window-of-modal">
+			<a id="fleche-retour" href="#"><i class="fa-solid fa-arrow-left"></i></a>
+			<a id="button-to-close-second-window" href="#"><i class="fa-solid fa-xmark"></i></a>
+		</div>
+		<h3 class="modal-title">Ajout photo</h3>
+		<form id="modal-edit-work-form" method="post" action="#">
+			<div id= "modal-edit-new-photo" class="modal-content-new-photo">
+				<i id= "photo-add-icon" class="fa-regular fa-image"></i>
+				<label id="new-image">+ Ajouter photo</label>
+				<input id="form-image" type="file" name="image" accept="image/*, .jpg, .jpeg, .png" required>
+				<p id="photo-size">jpg, png : 4mo max</p>
+			</div>
+			<div class="modal-content-new-category-title">
+				<label for="form-title">Titre</label>
+				<input type="text" name="title" id="form-title" value="" required>
+				<label for="form-category">Catégorie</label>
+				<select class="Choix-categorie" id="form-category" required>
+					<option value=""></option>
+				</select>
+				<hr class="border2">
+				<input type="submit" id="submit-new-work" value="Valider">
+			</div>
+		</form>
+	</div>
+</div>
+	<script src="./assets/javascript/index.js"></script>
 </body>
 </html>
