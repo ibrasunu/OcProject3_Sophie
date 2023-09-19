@@ -18,18 +18,21 @@ document.addEventListener('DOMContentLoaded', function() {
 			body: JSON.stringify(user),
 		})
 		.then(function(response) {
+			if ((response.status === 401) || (response.status === 404)){
+				alert("Email ou mot de passe erronné !");
+			}else if(response.status === 200){
+				return response.json();
+			};
 			
-			return response.json();
 		})
 		.then(function(data) {
-			console.log(data);
 			localStorage.setItem('token', data.token);
 			localStorage.setItem('userId', data.userId);
-			// Redirection vers'index.html'
-			location.href = 'index.html';
+			// Redirect to 'index.html'
+			location.href = 'index.html';			
 		})
-		.catch(function(error) {
-			console.log(error);
+		.catch(function(err) {
+			console.log(err);
 		});
-	})
+	});
 });
